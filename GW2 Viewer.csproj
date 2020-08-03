@@ -102,15 +102,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Home.cs" />
     <Compile Include="Scripts\Main.cs" />
     <Compile Include="Scripts\SideButton.cs" />
     <Compile Include="Scripts\Widget.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scenes" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="Scenes\Home.tscn" />
+    <Content Include="Scenes\Main.tscn" />
+    <Content Include="Scenes\Widget.tscn" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
