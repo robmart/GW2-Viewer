@@ -1,0 +1,247 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Textures/Icons/HomeIcon.svg" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Icons/TradingPostIcon.svg" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Icons/CraftingIcon.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Icons/WalletIcon.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/Icons/AchievmentIcon.svg" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Icons/APIKeyIcon.svg" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/Icons/SettingsIcon.svg" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/Icons/WorldBossIcon.svg" type="Texture" id=8]
+[ext_resource path="res://Scripts/Main.cs" type="Script" id=9]
+[ext_resource path="res://Scripts/SideButton.cs" type="Script" id=10]
+[ext_resource path="res://Assets/Fonts/PTSerif-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Textures/Icons/WvWIcon.svg" type="Texture" id=12]
+[ext_resource path="res://Scenes/Home.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Textures/Icons/DungeonIcon.svg" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 11 )
+
+[node name="Main" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color( 0.121569, 0.121569, 0.121569, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SideBar" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 13
+custom_constants/separation = 10
+alignment = 1
+
+[node name="HomeButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_right = 64.0
+margin_bottom = 64.0
+grow_horizontal = 2
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+disabled = true
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="WalletButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_top = 74.0
+margin_right = 64.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="TradingPostButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_top = 148.0
+margin_right = 64.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="CraftingButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_top = 222.0
+margin_right = 64.0
+margin_bottom = 286.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="WorldBossButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_top = 296.0
+margin_right = 64.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="DungeonButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_top = 370.0
+margin_right = 64.0
+margin_bottom = 434.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 14 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="WvWButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_top = 444.0
+margin_right = 64.0
+margin_bottom = 508.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="AchievmentButton" type="TextureButton" parent="HBoxContainer/SideBar"]
+margin_top = 518.0
+margin_right = 64.0
+margin_bottom = 582.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/SideBar"]
+margin_top = 592.0
+margin_right = 64.0
+margin_bottom = 596.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/SideBar"]
+margin_top = 606.0
+margin_right = 64.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+alignment = 2
+
+[node name="APIKeyButton" type="TextureButton" parent="HBoxContainer/SideBar/VBoxContainer"]
+margin_top = 342.0
+margin_right = 64.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="SettingsButton" type="TextureButton" parent="HBoxContainer/SideBar/VBoxContainer"]
+margin_top = 410.0
+margin_right = 64.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 10 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 68.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+
+[node name="MainBar" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_right = 1852.0
+margin_bottom = 60.0
+
+[node name="UserButton" type="Button" parent="HBoxContainer/VBoxContainer/MainBar"]
+margin_right = 114.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "User: "
+flat = true
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MainBar"]
+margin_left = 118.0
+margin_right = 118.0
+margin_bottom = 60.0
+
+[node name="Container" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 1852.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/VBoxContainer/Container"]
+margin_right = 1852.0
+margin_bottom = 1016.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.352941, 0.47451, 0.494118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/Container"]
+margin_right = 1852.0
+margin_bottom = 1016.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="DisplayArea" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Container/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1832.0
+margin_bottom = 996.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Home" parent="HBoxContainer/VBoxContainer/Container/MarginContainer/DisplayArea" instance=ExtResource( 13 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1812.0
+margin_bottom = 976.0
