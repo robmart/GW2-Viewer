@@ -220,7 +220,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/Container"]
+[node name="DisplayArea" type="MarginContainer" parent="HBoxContainer/VBoxContainer/Container"]
 margin_right = 1852.0
 margin_bottom = 1016.0
 size_flags_horizontal = 3
@@ -230,18 +230,10 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 
-[node name="DisplayArea" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Container/MarginContainer"]
+[node name="Home" parent="HBoxContainer/VBoxContainer/Container/DisplayArea" instance=ExtResource( 13 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1832.0
 margin_bottom = 996.0
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Home" parent="HBoxContainer/VBoxContainer/Container/MarginContainer/DisplayArea" instance=ExtResource( 13 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1800.0
-margin_bottom = 2692.0

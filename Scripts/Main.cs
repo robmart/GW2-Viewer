@@ -20,7 +20,7 @@ public class Main : Control {
 
 	public void OnButtonPressed(string buttonName) {
 		var sceneName = Regex.Replace(buttonName, "Button", "");
-		var displayArea = GetNode<ScrollContainer>("HBoxContainer/VBoxContainer/Container/MarginContainer/DisplayArea");
+		var displayArea = GetNode<MarginContainer>("HBoxContainer/VBoxContainer/Container/DisplayArea");
 		foreach (var child in displayArea.GetChildren()) {
 			if (child is Node nodeChild) {
 				nodeChild.QueueFree();
