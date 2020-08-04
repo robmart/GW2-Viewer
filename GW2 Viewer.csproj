@@ -105,7 +105,9 @@
     <Compile Include="Scripts\Home.cs" />
     <Compile Include="Scripts\Main.cs" />
     <Compile Include="Scripts\SideButton.cs" />
-    <Compile Include="Scripts\Widget.cs" />
+    <Compile Include="Scripts\TabMenu.cs" />
+    <Compile Include="Scripts\Widget\WalletWidget.cs" />
+    <Compile Include="Scripts\Widget\Widget.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
