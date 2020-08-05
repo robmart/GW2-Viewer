@@ -5,9 +5,10 @@ using Gw2Sharp;
 
 namespace GW2Viewer.Scripts {
 	public class Main : Control {
-		public static Color               ButtonColor { get; set; } = new Color(0.66f, 0.66f, 0.66f);
-		public static Connection          Connection;
-		public static Gw2Client           Client;
+		public static Color      ButtonColor { get; set; } = new Color(0.66f, 0.66f, 0.66f);
+		public static Connection Connection;
+		public static Gw2Client  Client;
+		
 		public static List<APIConnection> Connections { get; } = new List<APIConnection>();
 
 		public override void _Ready() {

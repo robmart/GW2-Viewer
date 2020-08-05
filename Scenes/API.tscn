@@ -148,3 +148,4 @@ margin_bottom = 246.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 text = "Guilds"
+[connection signal="pressed" from="ActiveCheck" to="." method="OnActivePressed"]

@@ -15,5 +15,15 @@ namespace GW2Viewer.Scripts {
 
             GetNode<Label>("Label").Text = Connection.Connection.AccessToken;
         }
+
+        public void OnActivePressed() {
+            foreach (Node api in GetTree().GetNodesInGroup("API")) {
+                if (api == this) {
+                    continue;
+                }
+
+                api.GetNode<CheckButton>("ActiveCheck").Pressed = false;
+            }
+        }
     }
 }
