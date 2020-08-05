@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/TabMenu.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/APIKey.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Icons/Plus.svg" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/Icons/Minus.svg" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/PTSerif-Regular.ttf" type="DynamicFontData" id=4]
@@ -104,3 +104,4 @@ margin_right = 1896.0
 margin_bottom = 933.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+[connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/Options/AddButton" to="." method="OnAddPressed"]
