@@ -8,9 +8,7 @@ namespace GW2Viewer.Scripts {
 
 		public override void Update() {
 			base.Update();
-			foreach (Widget.Widget widget in GetNode<VBoxContainer>("VBoxContainer").GetChildren()) {
-				widget.Update();
-			}
+			foreach (Widget.Widget widget in GetNode<VBoxContainer>("VBoxContainer").GetChildren()) widget.Update();
 		}
 	}
 }

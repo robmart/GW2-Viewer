@@ -5,7 +5,7 @@ using Godot;
 namespace GW2Viewer.Scripts.Widget {
 	public class Widget : MarginContainer {
 		[Export] public bool NeedsAPIKey = false;
-		
+
 		public override void _Ready() {
 			base._Ready();
 		}
@@ -24,21 +24,20 @@ namespace GW2Viewer.Scripts.Widget {
 		public new virtual void Update() {
 			var panel = GetNode<PanelContainer>("VBoxContainer/PanelContainer");
 			Depopulate();
-			if (NeedsAPIKey && Main.Connection.AccessToken.Equals(string.Empty)) {
+			if (NeedsAPIKey && Main.Connection.Connection.AccessToken.Equals(string.Empty)) {
 				var centerContainer = new CenterContainer();
-				var label = new Label();
-				var font = new DynamicFont();
-				var fontData = ResourceLoader.Load<DynamicFontData>("res://Assets/Fonts/PTSerif-Regular.ttf");
-				font.Size = 34;
+				var label           = new Label();
+				var font            = new DynamicFont();
+				var fontData        = ResourceLoader.Load<DynamicFontData>("res://Assets/Fonts/PTSerif-Regular.ttf");
+				font.Size     = 34;
 				font.FontData = fontData;
-				label.Text = "This widget needs an api key to function";
+				label.Text    = "This widget needs an api key to function";
 				label.Set("custom_fonts/font", font);
 				centerContainer.AddChild(label);
 				panel.AddChild(centerContainer);
 			}
-			else {
+			else
 				Populate(GetContents());
-			}
 		}
 
 		public virtual void Populate(ICollection<Node> nodes) {
@@ -48,7 +47,7 @@ namespace GW2Viewer.Scripts.Widget {
 		}
 
 		public virtual void Depopulate() {
-			foreach (Node node in GetNode<PanelContainer>("VBoxContainer/PanelContainer").GetChildren()) 
+			foreach (Node node in GetNode<PanelContainer>("VBoxContainer/PanelContainer").GetChildren())
 				node.QueueFree();
 		}
 	}

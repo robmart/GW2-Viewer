@@ -2,8 +2,6 @@
 
 namespace GW2Viewer.Scripts {
 	public class TabMenu : Node {
-		
-		public virtual void Update(){}
-		
+		public virtual void Update() { }
 	}
 }
