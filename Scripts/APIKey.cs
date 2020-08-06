@@ -65,9 +65,7 @@ namespace GW2Viewer.Scripts {
 
 		public void OnEditPressed() {
 			foreach (API api in GetTree().GetNodesInGroup("API")) {
-				Console.WriteLine("AAA");
 				if (!api.GetNode<CheckBox>("SelectedCheck").Pressed) continue;
-				Console.WriteLine("BBB");
 
 				var displayArea = GetNode<MarginContainer>("/root/Main/HBoxContainer/VBoxContainer/Container/DisplayArea");
 				foreach (var child in displayArea.GetChildren()) {

@@ -117,9 +117,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scenes\Achievments.tscn" />
+    <Content Include="Scenes\API.tscn" />
+    <Content Include="Scenes\APIEdit.tscn" />
+    <Content Include="Scenes\APIKey.tscn" />
+    <Content Include="Scenes\Crafting.tscn" />
+    <Content Include="Scenes\Dungeon.tscn" />
     <Content Include="Scenes\Home.tscn" />
     <Content Include="Scenes\Main.tscn" />
+    <Content Include="Scenes\Settings.tscn" />
+    <Content Include="Scenes\TradingPost.tscn" />
+    <Content Include="Scenes\Wallet.tscn" />
     <Content Include="Scenes\Widget.tscn" />
+    <Content Include="Scenes\WorldBoss.tscn" />
+    <Content Include="Scenes\WvW.tscn" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
