@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Godot;
 
 namespace GW2Viewer.Scripts {
@@ -35,9 +36,17 @@ namespace GW2Viewer.Scripts {
 				}
 				case false: {
 					if (this == GetTree().GetNodesInGroup("API")[0]) {
-						
+						if (GetTree().GetNodesInGroup("API").Cast<Node>().Where(api => api != this).Any(api => api.GetNode<CheckButton>("ActiveCheck").Pressed)) {
+							return;
+						}
+
+						GetNode<CheckButton>("ActiveCheck").Pressed = true;
 					}
 					else {
+						if (GetTree().GetNodesInGroup("API").Cast<Node>().Where(api => api != this).Any(api => api.GetNode<CheckButton>("ActiveCheck").Pressed)) {
+							return;
+						}
+						
 						((API) GetTree().GetNodesInGroup("API")[0]).GetNode<CheckButton>("ActiveCheck").Pressed = true;
 					}
 						

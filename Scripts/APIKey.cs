@@ -9,6 +9,7 @@ namespace GW2Viewer.Scripts {
 				var api = (API) ((PackedScene) ResourceLoader.Load("res://Scenes/API.tscn")).Instance();
 				api.Connection = connection;
 				container.AddChild(api);
+				api.GetNode<CheckButton>("ActiveCheck").Pressed = api.Connection.IsSelected;
 				container.AddChild(new HSeparator());
 			}
 		}

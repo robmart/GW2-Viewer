@@ -11,8 +11,7 @@ namespace GW2Viewer.Scripts {
 
 		public override void _Ready() {
 			base._Ready();
-			Connection              = new APIConnection();
-			Connection.CanBeDeleted = false;
+			Connection = new APIConnection {IsSelected = true, CanBeDeleted = false};
 
 			Update();
 		}
