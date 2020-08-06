@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace GW2Viewer.Scripts {
@@ -10,16 +11,28 @@ namespace GW2Viewer.Scripts {
 				api.Connection = connection;
 				container.AddChild(api);
 				api.GetNode<CheckButton>("ActiveCheck").Pressed = api.Connection.IsSelected;
-				container.AddChild(new HSeparator());
+				api.Separator = new HSeparator();
+				container.AddChild(api.Separator);
 			}
 		}
 
 		public void OnAddPressed() {
 			var container =
 				GetNode<VBoxContainer>("VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer");
-			var api = ((PackedScene) ResourceLoader.Load("res://Scenes/API.tscn")).Instance();
+			var api = (API) ((PackedScene) ResourceLoader.Load("res://Scenes/API.tscn")).Instance();
+			api.Separator = new HSeparator();
 			container.AddChild(api);
-			container.AddChild(new HSeparator());
+			container.AddChild(api.Separator);
+		}
+
+		public void OnRemovePressed() {
+			foreach (API api in GetTree().GetNodesInGroup("API")) {
+				if (!api.GetNode<CheckBox>("SelectedCheck").Pressed) continue;
+				
+				Main.Connections.Remove(api.Connection);
+				api.QueueFree();
+				api.Separator.QueueFree();
+			}
 		}
 	}
 }

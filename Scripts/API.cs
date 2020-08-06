@@ -6,6 +6,8 @@ namespace GW2Viewer.Scripts {
 	public class API : HBoxContainer {
 		public APIConnection Connection;
 
+		public HSeparator Separator;
+
 		public override void _Ready() {
 			AddToGroup("API");
 			Connection ??= new APIConnection(string.Empty);

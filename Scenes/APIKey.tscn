@@ -77,7 +77,6 @@ modulate = Color( 0.729412, 0.109804, 0.109804, 1 )
 margin_left = 916.0
 margin_right = 980.0
 margin_bottom = 64.0
-disabled = true
 texture_normal = ExtResource( 3 )
 
 [node name="EditButton" type="TextureButton" parent="VBoxContainer/PanelContainer/VBoxContainer/Options"]
@@ -105,3 +104,4 @@ margin_bottom = 933.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 [connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/Options/AddButton" to="." method="OnAddPressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/Options/RemoveButton" to="." method="OnRemovePressed"]
