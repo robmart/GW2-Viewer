@@ -62,5 +62,23 @@ namespace GW2Viewer.Scripts {
 				api.Separator.QueueFree();
 			}
 		}
+
+		public void OnEditPressed() {
+			foreach (API api in GetTree().GetNodesInGroup("API")) {
+				Console.WriteLine("AAA");
+				if (!api.GetNode<CheckBox>("SelectedCheck").Pressed) continue;
+				Console.WriteLine("BBB");
+
+				var displayArea = GetNode<MarginContainer>("/root/Main/HBoxContainer/VBoxContainer/Container/DisplayArea");
+				foreach (var child in displayArea.GetChildren()) {
+					if (child is Node nodeChild) nodeChild.QueueFree();
+				}
+
+				var menu = (APIEdit) ((PackedScene) ResourceLoader.Load($"res://Scenes/APIEdit.tscn")).Instance();
+				menu.Connection = api.Connection;
+				displayArea.AddChild(menu);
+				menu.Update();
+			}
+		}
 	}
 }

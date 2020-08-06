@@ -104,6 +104,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\API.cs" />
     <Compile Include="Scripts\APIConnection.cs" />
+    <Compile Include="Scripts\APIEdit.cs" />
     <Compile Include="Scripts\APIKey.cs" />
     <Compile Include="Scripts\Home.cs" />
     <Compile Include="Scripts\Main.cs" />
