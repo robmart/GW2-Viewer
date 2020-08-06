@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Godot;
 
 namespace GW2Viewer.Scripts {
@@ -14,6 +15,33 @@ namespace GW2Viewer.Scripts {
 				api.Separator = new HSeparator();
 				container.AddChild(api.Separator);
 			}
+		}
+
+		public override void _Process(float delta) {
+			base._Process(delta);
+			var add = GetNode<TextureButton>("VBoxContainer/PanelContainer/VBoxContainer/Options/AddButton");
+			var remove = GetNode<TextureButton>("VBoxContainer/PanelContainer/VBoxContainer/Options/RemoveButton");
+			var edit = GetNode<TextureButton>("VBoxContainer/PanelContainer/VBoxContainer/Options/EditButton");
+			var selected = GetTree().GetNodesInGroup("API").Cast<API>().Count(api => api.GetNode<CheckBox>("SelectedCheck").Pressed);
+
+			remove.Disabled = selected < 1;
+			edit.Disabled = selected != 1;
+			
+			add.Modulate = add.IsHovered() ? Colors.Green : Colors.DarkGreen;
+			
+			if (remove.Disabled)
+				remove.Modulate = new Color(0.4f, 0.4f, 0.4f);
+			else if (remove.IsHovered())
+				remove.Modulate = Colors.Red;
+			else
+				remove.Modulate = Colors.DarkRed;
+			
+			if (edit.Disabled)
+				edit.Modulate = new Color(0.4f, 0.4f, 0.4f);
+			else if (edit.IsHovered())
+				edit.Modulate = Colors.Blue;
+			else
+				edit.Modulate = Colors.DarkBlue;
 		}
 
 		public void OnAddPressed() {

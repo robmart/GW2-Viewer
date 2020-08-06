@@ -66,14 +66,12 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="AddButton" type="TextureButton" parent="VBoxContainer/PanelContainer/VBoxContainer/Options"]
-modulate = Color( 0.207843, 0.772549, 0.145098, 1 )
 margin_left = 848.0
 margin_right = 912.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 2 )
 
 [node name="RemoveButton" type="TextureButton" parent="VBoxContainer/PanelContainer/VBoxContainer/Options"]
-modulate = Color( 0.729412, 0.109804, 0.109804, 1 )
 margin_left = 916.0
 margin_right = 980.0
 margin_bottom = 64.0
